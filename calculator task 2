@@ -1,0 +1,27 @@
+# Internship Task 2 - Custom Calculator by Leonal
+
+def perform_operation(x, y, operator):
+    operations = {
+        '+': x + y,
+        '-': x - y,
+        '*': x * y,
+        '/': "Cannot divide by zero" if y == 0 else x / y
+    }
+    return operations.get(operator, "Invalid operation selected.")
+
+def main():
+    print("Welcome to Leonal's Smart Calculator")
+    
+    try:
+        num1 = float(input("Enter your first number: "))
+        num2 = float(input("Enter your second number: "))
+        print("Select operation:\n+ for Addition\n- for Subtraction\n* for Multiplication\n/ for Division")
+        choice = input("Enter your operation: ").strip()
+
+        result = perform_operation(num1, num2, choice)
+        print(f"The result is: {result}")
+
+    except ValueError:
+        print("Please enter valid numeric inputs.")
+
+main()
